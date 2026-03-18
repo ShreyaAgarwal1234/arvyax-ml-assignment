@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArvyaX — Mental State Intelligence</title>
+<style>
+  :root {
+    --bg: #0a0c14;
+    --card: #12151f;
+    --card2: #1a1e2e;
+    --border: #252a3d;
+    --accent: #7c6ff7;
+    --accent2: #a78bfa;
+    --green: #10b981;
+    --yellow: #f59e0b;
+    --red: #ef4444;
+    --orange: #f97316;
+    --blue: #3b82f6;
+    --pink: #ec4899;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --calm-c: #10b981;
+    --focused-c: #3b82f6;
+    --neutral-c: #94a3b8;
+    --restless-c: #f59e0b;
+    --mixed-c: #f97316;
+    --overwhelmed-c: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #12151f 0%, #0a0c14 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 12px; }
+  .logo-icon { font-size: 32px; }
+  .logo-text { font-size: 26px; font-weight: 800; background: linear-gradient(135deg, #7c6ff7, #a78bfa, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .logo-sub  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .header-badge { background: linear-gradient(135deg,#7c6ff7,#a78bfa); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; color: white; }
+
+  /* STATS BAR */
+  .stats-bar { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; padding: 24px 40px; }
+  .stat-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 24px; text-align: center; position: relative; overflow: hidden;
+  }
+  .stat-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .stat-val { font-size: 32px; font-weight: 800; background: linear-gradient(135deg,#7c6ff7,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .stat-lbl { font-size: 12px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* MAIN GRID */
+  .main { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 0 40px 40px; }
+
+  /* CARD */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+  .card-title { font-size: 14px; font-weight: 700; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 22px; display: flex; align-items: center; gap: 8px; }
+
+  /* FORM */
+  .form-group { margin-bottom: 18px; }
+  label { display: block; font-size: 11px; color: var(--muted); margin-bottom: 7px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  textarea { width:100%; background:#0a0c14; border:1px solid var(--border); border-radius:10px; color:var(--text); font-size:14px; padding:14px; min-height:100px; resize:vertical; line-height:1.6; transition:border-color 0.2s; }
+  textarea:focus { outline:none; border-color:var(--accent); }
+  select { width:100%; background:#0a0c14; border:1px solid var(--border); border-radius:10px; color:var(--text); font-size:13px; padding:10px 12px; transition:border-color 0.2s; }
+  select:focus { outline:none; border-color:var(--accent); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* SLIDER */
+  .slider-group { margin-bottom: 16px; }
+  .slider-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .slider-label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .slider-val { font-size: 13px; font-weight: 800; color: var(--accent); background: #1a1e2e; padding: 2px 10px; border-radius: 8px; }
+  input[type=range] {
+    width:100%; -webkit-appearance:none; height:5px; border-radius:3px; border:none;
+    background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--pct,50%), #252a3d var(--pct,50%), #252a3d 100%);
+    cursor:pointer;
+  }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:18px; height:18px; border-radius:50%; background:var(--accent); cursor:pointer; box-shadow:0 0 8px rgba(124,111,247,0.5); }
+
+  /* BUTTON */
+  .btn-analyse {
+    width:100%; padding:16px; background:linear-gradient(135deg,#7c6ff7,#a78bfa);
+    border:none; border-radius:12px; color:white; font-size:16px; font-weight:800;
+    cursor:pointer; transition:all 0.2s; margin-top:8px; letter-spacing:0.02em;
+    box-shadow: 0 4px 20px rgba(124,111,247,0.3);
+  }
+  .btn-analyse:hover { transform:translateY(-1px); box-shadow:0 6px 24px rgba(124,111,247,0.5); }
+  .btn-analyse:active { transform:scale(0.98); }
+  .btn-analyse:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
+
+  /* RESULTS */
+  #placeholder { display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; min-height:400px; }
+  #results { display:none; }
+
+  /* STATE BADGE */
+  .state-badge {
+    display:inline-flex; align-items:center; gap:8px; padding:10px 20px;
+    border-radius:30px; font-weight:800; font-size:20px; text-transform:capitalize;
+    margin-bottom:20px;
+  }
+  .state-calm        { background:rgba(16,185,129,0.15); color:#10b981; border:1px solid rgba(16,185,129,0.3); }
+  .state-focused     { background:rgba(59,130,246,0.15); color:#60a5fa; border:1px solid rgba(59,130,246,0.3); }
+  .state-neutral     { background:rgba(148,163,184,0.15); color:#94a3b8; border:1px solid rgba(148,163,184,0.3); }
+  .state-restless    { background:rgba(245,158,11,0.15); color:#fbbf24; border:1px solid rgba(245,158,11,0.3); }
+  .state-mixed       { background:rgba(249,115,22,0.15); color:#fb923c; border:1px solid rgba(249,115,22,0.3); }
+  .state-overwhelmed { background:rgba(239,68,68,0.15); color:#f87171; border:1px solid rgba(239,68,68,0.3); }
+
+  /* METRICS */
+  .metrics-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px; }
+  .metric { background:#0a0c14; border-radius:12px; padding:14px 18px; border:1px solid var(--border); }
+  .metric-label { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px; }
+  .metric-value { font-size:24px; font-weight:800; }
+  .mv-green  { color:#10b981; }
+  .mv-yellow { color:#f59e0b; }
+  .mv-red    { color:#ef4444; }
+  .mv-blue   { color:#60a5fa; }
+  .mv-purple { color:#a78bfa; }
+
+  /* INTENSITY DOTS */
+  .intensity-dots { display:flex; gap:6px; margin-top:6px; }
+  .dot { width:12px; height:12px; border-radius:50%; background:var(--border); transition:all 0.3s; }
+  .dot.active { background:linear-gradient(135deg,#7c6ff7,#a78bfa); box-shadow:0 0 8px rgba(124,111,247,0.6); }
+
+  /* UNCERTAIN BADGE */
+  .unc-badge { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:8px; font-size:12px; font-weight:700; margin-bottom:16px; }
+  .unc-yes { background:rgba(239,68,68,0.15); color:#fca5a5; border:1px solid rgba(239,68,68,0.2); }
+  .unc-no  { background:rgba(16,185,129,0.15); color:#6ee7b7; border:1px solid rgba(16,185,129,0.2); }
+
+  /* DECISION BOX */
+  .decision-box {
+    background: linear-gradient(135deg, #1a1e2e, #12151f);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 18px; margin-bottom: 16px;
+    border-left: 3px solid var(--accent);
+  }
+  .decision-what { font-size: 22px; font-weight: 800; color: var(--accent2); text-transform: capitalize; margin-bottom: 8px; }
+  .decision-when { display: inline-flex; align-items: center; gap: 6px; }
+  .when-badge { background: rgba(124,111,247,0.2); color: var(--accent2); padding: 4px 12px; border-radius: 10px; font-size: 12px; font-weight: 700; text-transform: capitalize; }
+
+  /* MESSAGE BOX */
+  .msg-box {
+    background: linear-gradient(135deg, #1a1e2e, #0a0c14);
+    border: 1px solid var(--border); border-left: 3px solid var(--accent2);
+    border-radius: 12px; padding: 16px; font-size: 14px; line-height: 1.75;
+    color: #cbd5e1; margin-bottom: 16px;
+  }
+
+  /* PROBABILITY BARS */
+  .proba-section { margin-top: 4px; }
+  .proba-title { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+  .proba-row { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .proba-name { width:85px; font-size:12px; text-transform:capitalize; color:var(--muted); }
+  .proba-track { flex:1; background:var(--border); border-radius:4px; height:7px; overflow:hidden; }
+  .proba-fill { height:7px; border-radius:4px; transition:width 0.6s ease; }
+  .proba-pct { font-size:12px; font-weight:700; width:36px; text-align:right; }
+
+  /* SPINNER */
+  .spinner { display:none; width:20px; height:20px; border:2px solid rgba(255,255,255,0.3); border-top-color:white; border-radius:50%; animation:spin 0.7s linear infinite; margin:0 auto; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+
+  /* COLOR MAP */
+  .color-calm        { background: linear-gradient(90deg,#10b981,#34d399); }
+  .color-focused     { background: linear-gradient(90deg,#3b82f6,#60a5fa); }
+  .color-neutral     { background: linear-gradient(90deg,#64748b,#94a3b8); }
+  .color-restless    { background: linear-gradient(90deg,#f59e0b,#fbbf24); }
+  .color-mixed       { background: linear-gradient(90deg,#f97316,#fb923c); }
+  .color-overwhelmed { background: linear-gradient(90deg,#ef4444,#f87171); }
+
+  @media(max-width:900px) {
+    .stats-bar { grid-template-columns: 1fr 1fr; padding: 16px 20px; }
+    .main { grid-template-columns: 1fr; padding: 0 20px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-wrap">
+    <div class="logo-icon">🌿</div>
+    <div>
+      <div class="logo-text">ArvyaX</div>
+      <div class="logo-sub">Mental State Intelligence · RevoltronX</div>
+    </div>
+  </div>
+  <div class="header-badge">🤖 ML Powered</div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-card"><div class="stat-val">90%</div><div class="stat-lbl">CV Accuracy</div></div>
+  <div class="stat-card"><div class="stat-val">0.81</div><div class="stat-lbl">Intensity MAE</div></div>
+  <div class="stat-card"><div class="stat-val">891</div><div class="stat-lbl">Training Samples</div></div>
+  <div class="stat-card"><div class="stat-val">6</div><div class="stat-lbl">Emotional States</div></div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT: INPUT FORM -->
+  <div class="card">
+    <div class="card-title">✍️ Journal Reflection</div>
+
+    <div class="form-group">
+      <label>Reflection / Journal Text</label>
+      <textarea id="journal_text" placeholder="How are you feeling after the session? Write freely..."></textarea>
+    </div>
+
+    <div class="grid2">
+      <div class="form-group">
+        <label>Ambience Type</label>
+        <select id="ambience_type">
+          <option value="ocean">🌊 Ocean</option>
+          <option value="forest">🌲 Forest</option>
+          <option value="rain">🌧️ Rain</option>
+          <option value="mountain">⛰️ Mountain</option>
+          <option value="cafe">☕ Café</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Time of Day</label>
+        <select id="time_of_day">
+          <option value="morning">🌅 Morning</option>
+          <option value="afternoon">☀️ Afternoon</option>
+          <option value="evening">🌆 Evening</option>
+          <option value="night">🌙 Night</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="form-group">
+        <label>Previous Day Mood</label>
+        <select id="previous_day_mood">
+          <option value="calm">😌 Calm</option>
+          <option value="neutral" selected>😐 Neutral</option>
+          <option value="focused">🎯 Focused</option>
+          <option value="mixed">🔀 Mixed</option>
+          <option value="overwhelmed">😵 Overwhelmed</option>
+          <option value="restless">😤 Restless</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Reflection Quality</label>
+        <select id="reflection_quality">
+          <option value="clear">✅ Clear</option>
+          <option value="vague">🌫️ Vague</option>
+          <option value="conflicted">⚡ Conflicted</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Face Emotion Hint</label>
+      <select id="face_emotion_hint">
+        <option value="calm_face">😌 Calm</option>
+        <option value="happy_face">😊 Happy</option>
+        <option value="neutral_face" selected>😐 Neutral</option>
+        <option value="tired_face">😴 Tired</option>
+        <option value="tense_face">😟 Tense</option>
+        <option value="none">❓ Unknown</option>
+      </select>
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-header">
+        <span class="slider-label">⏱ Duration (min)</span>
+        <span class="slider-val" id="dur_val">15</span>
+      </div>
+      <input type="range" id="duration_min" min="3" max="40" value="15" oninput="slide(this,'dur_val')">
+    </div>
+    <div class="slider-group">
+      <div class="slider-header">
+        <span class="slider-label">😴 Sleep Hours</span>
+        <span class="slider-val" id="sleep_val">7.0h</span>
+      </div>
+      <input type="range" id="sleep_hours" min="2" max="10" step="0.5" value="7" oninput="slide(this,'sleep_val',1,'h')">
+    </div>
+    <div class="slider-group">
+      <div class="slider-header">
+        <span class="slider-label">⚡ Energy Level</span>
+        <span class="slider-val" id="energy_val">3/5</span>
+      </div>
+      <input type="range" id="energy_level" min="1" max="5" value="3" oninput="slide(this,'energy_val',0,'/5')">
+    </div>
+    <div class="slider-group">
+      <div class="slider-header">
+        <span class="slider-label">🔥 Stress Level</span>
+        <span class="slider-val" id="stress_val">3/5</span>
+      </div>
+      <input type="range" id="stress_level" min="1" max="5" value="3" oninput="slide(this,'stress_val',0,'/5')">
+    </div>
+
+    <button class="btn-analyse" onclick="analyse()">
+      <span id="btn-text">🧠 Analyse My State</span>
+      <div class="spinner" id="spinner"></div>
+    </button>
+  </div>
+
+  <!-- RIGHT: RESULTS -->
+  <div class="card">
+    <div class="card-title">📊 Analysis Results</div>
+
+    <!-- Placeholder -->
+    <div id="placeholder">
+      <div style="font-size:52px">🌿</div>
+      <div style="color:var(--muted);text-align:center;line-height:1.7;font-size:14px">
+        Write your reflection and<br>click <strong style="color:var(--accent2)">Analyse My State</strong>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="results">
+      <span class="state-badge" id="state-badge">calm</span>
+      <br>
+      <div id="unc-badge"></div>
+
+      <div class="metrics-grid">
+        <div class="metric">
+          <div class="metric-label">Intensity</div>
+          <div class="metric-value mv-purple" id="intensity-val">3/5</div>
+          <div class="intensity-dots" id="intensity-dots"></div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Confidence</div>
+          <div class="metric-value" id="conf-val">—</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px" id="conf-sub"></div>
+        </div>
+      </div>
+
+      <div class="decision-box">
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px">Recommended Action</div>
+        <div class="decision-what" id="what-val">—</div>
+        <div class="decision-when">
+          <span style="font-size:12px;color:var(--muted)">When:</span>
+          <span class="when-badge" id="when-val">—</span>
+        </div>
+      </div>
+
+      <div class="msg-box" id="msg-box">—</div>
+
+      <div class="proba-section">
+        <div class="proba-title">State Probabilities</div>
+        <div id="proba-list"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Init sliders
+function slide(el, valId, dec=0, suffix='') {
+  const v = parseFloat(el.value);
+  document.getElementById(valId).textContent = (dec ? v.toFixed(dec) : v) + suffix;
+  const pct = ((v - el.min) / (el.max - el.min) * 100).toFixed(1);
+  el.style.setProperty('--pct', pct + '%');
+}
+['duration_min','sleep_hours','energy_level','stress_level'].forEach(id => {
+  document.getElementById(id).dispatchEvent(new Event('input'));
+});
+
+const STATE_ICONS = {
+  calm:'😌', focused:'🎯', neutral:'😐',
+  restless:'😤', mixed:'🔀', overwhelmed:'😵'
+};
+
+async function analyse() {
+  const btn = document.querySelector('.btn-analyse');
+  btn.disabled = true;
+  document.getElementById('btn-text').style.display = 'none';
+  document.getElementById('spinner').style.display = 'block';
+
+  const payload = {
+    journal_text:       document.getElementById('journal_text').value,
+    ambience_type:      document.getElementById('ambience_type').value,
+    duration_min:       parseFloat(document.getElementById('duration_min').value),
+    sleep_hours:        parseFloat(document.getElementById('sleep_hours').value),
+    energy_level:       parseFloat(document.getElementById('energy_level').value),
+    stress_level:       parseFloat(document.getElementById('stress_level').value),
+    time_of_day:        document.getElementById('time_of_day').value,
+    previous_day_mood:  document.getElementById('previous_day_mood').value,
+    face_emotion_hint:  document.getElementById('face_emotion_hint').value,
+    reflection_quality: document.getElementById('reflection_quality').value,
+  };
+
+  try {
+    const res  = await fetch('/predict', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (data.success) renderResults(data.result);
+    else alert('Error: ' + data.error);
+  } catch(e) {
+    alert('Connection error: ' + e.message);
+  } finally {
+    btn.disabled = false;
+    document.getElementById('btn-text').style.display = 'inline';
+    document.getElementById('spinner').style.display = 'none';
+  }
+}
+
+function renderResults(r) {
+  document.getElementById('placeholder').style.display = 'none';
+  document.getElementById('results').style.display = 'block';
+
+  const state = (r.predicted_state || 'neutral').toLowerCase();
+  const icon  = STATE_ICONS[state] || '🧠';
+
+  // State badge
+  const badge = document.getElementById('state-badge');
+  badge.textContent = icon + ' ' + state;
+  badge.className = 'state-badge state-' + state;
+
+  // Uncertain badge
+  const uncEl = document.getElementById('unc-badge');
+  uncEl.innerHTML = r.uncertain_flag
+    ? '<span class="unc-badge unc-yes">⚠️ Uncertain — treat with caution</span>'
+    : '<span class="unc-badge unc-no">✅ Confident Prediction</span>';
+
+  // Intensity
+  const intv = r.predicted_intensity || 3;
+  document.getElementById('intensity-val').textContent = intv + '/5';
+  const dots = document.getElementById('intensity-dots');
+  dots.innerHTML = '';
+  for (let i=1;i<=5;i++) {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i<=intv?' active':'');
+    dots.appendChild(d);
+  }
+
+  // Confidence
+  const conf    = r.confidence || 0;
+  const confPct = Math.round(conf * 100);
+  const confEl  = document.getElementById('conf-val');
+  confEl.textContent = confPct + '%';
+  confEl.className   = 'metric-value ' + (confPct>=65?'mv-green':confPct>=45?'mv-yellow':'mv-red');
+  document.getElementById('conf-sub').textContent = confPct>=65?'High confidence':confPct>=45?'Moderate':'Low confidence';
+
+  // Decision
+  const what = (r.what_to_do || '').replace(/_/g,' ');
+  const when = (r.when_to_do || '').replace(/_/g,' ');
+  document.getElementById('what-val').textContent = what;
+  document.getElementById('when-val').textContent = when;
+
+  // Message
+  document.getElementById('msg-box').textContent = r.support_message || r.supportive_message || 'Take a mindful moment for yourself.';
+
+  // Probabilities
+  const probs = r.class_probabilities || {};
+  const list  = document.getElementById('proba-list');
+  list.innerHTML = '';
+  const sorted = Object.entries(probs).sort((a,b)=>b[1]-a[1]);
+  sorted.forEach(([cls, prob]) => {
+    const pct = Math.round(prob * 100);
+    list.innerHTML += `
+      <div class="proba-row">
+        <div class="proba-name">${cls}</div>
+        <div class="proba-track">
+          <div class="proba-fill color-${cls}" style="width:${pct}%"></div>
+        </div>
+        <div class="proba-pct" style="color:var(--accent2)">${pct}%</div>
+      </div>`;
+  });
+}
+</script>
+</body>
+</html>

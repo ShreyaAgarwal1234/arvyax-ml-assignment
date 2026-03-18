@@ -1,0 +1,121 @@
+id,predicted_state,predicted_intensity,confidence,uncertain_flag,what_to_do,when_to_do,support_message
+10001,calm,3,0.161,1,journaling,tomorrow_morning,You seem calm and grounded. This is a good window to use your clarity intentionally. Write freely for 5 minutes. Let what's inside come out on the page.
+10002,restless,4,0.181,1,box_breathing,now,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10003,focused,4,0.1,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10004,calm,3,0.288,1,deep_work,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10005,calm,2,0.321,1,light_planning,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10006,mixed,3,0.304,1,box_breathing,within_15_min,"You're carrying two states at once — some calm, some tension. Let's process it first. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10007,restless,4,0.302,1,sound_therapy,tonight,There's restless energy in your system. Let's slow things down before diving in. Try calming ambient sounds for 10–15 minutes before sleep.
+10008,overwhelmed,3,0.672,0,rest,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10009,restless,4,0.533,1,grounding,within_15_min,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10010,overwhelmed,3,0.293,1,rest,tonight,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10011,overwhelmed,3,0.271,1,rest,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10012,restless,3,0.1,1,box_breathing,now,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10013,neutral,3,0.117,1,light_planning,later_today,You're in a steady state. A little structure can help you make the most of this window. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10014,mixed,2,0.284,1,journaling,later_today,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10015,focused,4,0.293,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10016,neutral,4,0.336,1,light_planning,later_today,You're in a steady state. A little structure can help you make the most of this window. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10017,mixed,3,0.507,1,box_breathing,within_15_min,"You're carrying two states at once — some calm, some tension. Let's process it first. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10018,mixed,3,0.559,0,journaling,now,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10019,focused,3,0.461,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10020,calm,3,0.14,1,light_planning,later_today,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10021,overwhelmed,4,0.525,1,rest,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10022,calm,2,0.513,1,deep_work,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10023,neutral,3,0.296,1,rest,tomorrow_morning,"You're in a steady state. A little structure can help you make the most of this window. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10024,calm,3,0.225,1,light_planning,later_today,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10025,calm,3,0.137,1,deep_work,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10026,restless,3,0.423,1,box_breathing,now,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10027,calm,4,0.115,1,light_planning,later_today,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10028,neutral,3,0.293,1,light_planning,later_today,You're in a steady state. A little structure can help you make the most of this window. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10029,overwhelmed,2,0.47,1,grounding,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10030,focused,4,0.11,1,light_planning,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10031,focused,4,0.439,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10032,overwhelmed,3,0.31,1,grounding,within_15_min,"You seem overwhelmed. Before anything else, let's create a little space to breathe. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10033,overwhelmed,3,0.347,1,rest,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10034,neutral,3,0.523,1,rest,tomorrow_morning,"You're in a steady state. A little structure can help you make the most of this window. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10035,focused,4,0.474,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10036,restless,3,0.667,0,grounding,now,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10037,calm,3,0.1,1,deep_work,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10038,mixed,3,0.417,1,rest,tomorrow_morning,"You're carrying two states at once — some calm, some tension. Let's process it first. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10039,mixed,3,0.1,1,journaling,now,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10040,restless,4,0.261,1,box_breathing,within_15_min,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10041,overwhelmed,4,0.335,1,box_breathing,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10042,calm,4,0.434,1,light_planning,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10043,calm,3,0.1,1,journaling,tomorrow_morning,You seem calm and grounded. This is a good window to use your clarity intentionally. Write freely for 5 minutes. Let what's inside come out on the page.
+10044,calm,3,0.12,1,light_planning,later_today,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10045,neutral,4,0.391,1,deep_work,within_15_min,You're in a steady state. A little structure can help you make the most of this window. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10046,calm,3,0.279,1,journaling,tomorrow_morning,You seem calm and grounded. This is a good window to use your clarity intentionally. Write freely for 5 minutes. Let what's inside come out on the page.
+10047,focused,4,0.709,0,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10048,focused,3,0.1,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10049,neutral,3,0.247,1,rest,tomorrow_morning,"You're in a steady state. A little structure can help you make the most of this window. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10050,restless,3,0.221,1,grounding,now,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10051,overwhelmed,3,0.3,1,grounding,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10052,overwhelmed,4,0.347,1,box_breathing,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10053,calm,4,0.225,1,deep_work,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10054,overwhelmed,4,0.239,1,grounding,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10055,mixed,4,0.5,1,rest,tomorrow_morning,"You're carrying two states at once — some calm, some tension. Let's process it first. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10056,focused,3,0.291,1,light_planning,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10057,restless,4,0.208,1,box_breathing,now,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10058,overwhelmed,4,0.391,1,grounding,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10059,mixed,3,0.291,1,rest,tomorrow_morning,"You're carrying two states at once — some calm, some tension. Let's process it first. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10060,overwhelmed,3,0.109,1,rest,tonight,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10061,calm,4,0.448,1,journaling,tomorrow_morning,You seem calm and grounded. This is a good window to use your clarity intentionally. Write freely for 5 minutes. Let what's inside come out on the page.
+10062,calm,4,0.343,1,journaling,tomorrow_morning,You seem calm and grounded. This is a good window to use your clarity intentionally. Write freely for 5 minutes. Let what's inside come out on the page.
+10063,restless,5,0.411,1,box_breathing,now,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10064,focused,3,0.211,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10065,neutral,4,0.542,1,deep_work,within_15_min,You're in a steady state. A little structure can help you make the most of this window. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10066,restless,4,0.1,1,box_breathing,within_15_min,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10067,restless,4,0.441,1,sound_therapy,tonight,There's restless energy in your system. Let's slow things down before diving in. Try calming ambient sounds for 10–15 minutes before sleep.
+10068,overwhelmed,4,0.605,1,box_breathing,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10069,overwhelmed,2,0.287,1,grounding,within_15_min,"You seem overwhelmed. Before anything else, let's create a little space to breathe. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10070,restless,3,0.351,1,grounding,within_15_min,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10071,mixed,2,0.376,1,box_breathing,within_15_min,"You're carrying two states at once — some calm, some tension. Let's process it first. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10072,neutral,4,0.287,1,light_planning,later_today,You're in a steady state. A little structure can help you make the most of this window. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10073,restless,4,0.246,1,grounding,now,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10074,mixed,3,0.525,1,journaling,now,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10075,restless,2,0.27,1,grounding,now,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10076,mixed,4,0.47,1,box_breathing,within_15_min,"You're carrying two states at once — some calm, some tension. Let's process it first. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10077,mixed,4,0.307,1,journaling,tonight,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10078,mixed,3,0.1,1,journaling,later_today,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10079,restless,4,0.662,0,box_breathing,within_15_min,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10080,calm,3,0.114,1,journaling,tomorrow_morning,You seem calm and grounded. This is a good window to use your clarity intentionally. Write freely for 5 minutes. Let what's inside come out on the page.
+10081,restless,4,0.464,1,grounding,now,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10082,mixed,3,0.139,1,journaling,later_today,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10083,calm,3,0.125,1,light_planning,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10084,overwhelmed,2,0.665,1,rest,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10085,calm,3,0.133,1,light_planning,later_today,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10086,restless,4,0.269,1,grounding,within_15_min,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10087,mixed,4,0.562,1,rest,tomorrow_morning,"You're carrying two states at once — some calm, some tension. Let's process it first. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10088,neutral,4,0.467,1,deep_work,within_15_min,You're in a steady state. A little structure can help you make the most of this window. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10089,calm,4,0.581,1,light_planning,later_today,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10090,calm,4,0.145,1,light_planning,later_today,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10091,neutral,3,0.421,1,rest,tomorrow_morning,"You're in a steady state. A little structure can help you make the most of this window. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10092,overwhelmed,3,0.272,1,grounding,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10093,mixed,3,0.343,1,journaling,tonight,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10094,focused,4,0.182,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10095,overwhelmed,4,0.247,1,rest,tonight,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10096,focused,3,0.1,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10097,focused,3,0.146,1,deep_work,within_15_min,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10098,overwhelmed,4,0.486,1,rest,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10099,mixed,3,0.324,1,box_breathing,within_15_min,"You're carrying two states at once — some calm, some tension. Let's process it first. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10100,mixed,4,0.401,1,box_breathing,now,"You're carrying two states at once — some calm, some tension. Let's process it first. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10101,focused,4,0.479,1,deep_work,within_15_min,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10102,restless,2,0.146,1,box_breathing,within_15_min,There's restless energy in your system. Let's slow things down before diving in. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold).
+10103,calm,3,0.665,0,light_planning,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10104,mixed,3,0.265,1,journaling,now,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10105,calm,3,0.1,1,deep_work,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10106,overwhelmed,4,0.513,1,grounding,now,"You seem overwhelmed. Before anything else, let's create a little space to breathe. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."
+10107,focused,3,0.184,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10108,neutral,3,0.471,1,deep_work,within_15_min,You're in a steady state. A little structure can help you make the most of this window. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10109,neutral,3,0.525,1,light_planning,now,You're in a steady state. A little structure can help you make the most of this window. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10110,calm,3,0.163,1,journaling,tomorrow_morning,You seem calm and grounded. This is a good window to use your clarity intentionally. Write freely for 5 minutes. Let what's inside come out on the page.
+10111,mixed,4,0.183,1,box_breathing,within_15_min,"You're carrying two states at once — some calm, some tension. Let's process it first. Try 4 rounds of box breathing (4s inhale → hold → exhale → hold)."
+10112,mixed,4,0.394,1,journaling,later_today,"You're carrying two states at once — some calm, some tension. Let's process it first. Write freely for 5 minutes. Let what's inside come out on the page."
+10113,calm,3,0.439,1,deep_work,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10114,calm,3,0.153,1,light_planning,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10115,calm,3,0.252,1,light_planning,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10116,overwhelmed,2,0.241,1,rest,tonight,"You seem overwhelmed. Before anything else, let's create a little space to breathe. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10117,calm,5,0.33,1,light_planning,now,You seem calm and grounded. This is a good window to use your clarity intentionally. Spend 10 minutes writing your 3 priorities. Keep it light and clear.
+10118,focused,4,0.525,1,deep_work,now,Your mind is sharp and ready. Use this momentum — start with your most important task. Block 45–90 min for deep work. Turn off notifications. You're ready.
+10119,mixed,3,0.342,1,rest,tomorrow_morning,"You're carrying two states at once — some calm, some tension. Let's process it first. Your system needs recovery. Take a proper break — nap, walk, or quiet time."
+10120,restless,5,0.388,1,grounding,now,"There's restless energy in your system. Let's slow things down before diving in. 5-4-3-2-1: 5 things you see, 4 feel, 3 hear, 2 smell, 1 taste."

@@ -1,0 +1,99 @@
+{
+  "ablation": {
+    "text_only": 0.89,
+    "meta_only": 0.82,
+    "combined": 0.89
+  },
+  "top_features": [
+    [
+      "focused_score",
+      0.0715
+    ],
+    [
+      "stress_e",
+      0.0466
+    ],
+    [
+      "calm_score",
+      0.0455
+    ],
+    [
+      "stress",
+      0.0378
+    ],
+    [
+      "mixed_score",
+      0.0376
+    ],
+    [
+      "kept",
+      0.0336
+    ],
+    [
+      "overwhelmed_score",
+      0.0325
+    ],
+    [
+      "feel",
+      0.027
+    ],
+    [
+      "neg_count",
+      0.0244
+    ],
+    [
+      "sleep",
+      0.0229
+    ],
+    [
+      "sleep_def",
+      0.0223
+    ],
+    [
+      "text_len",
+      0.022
+    ],
+    [
+      "restless_score",
+      0.0218
+    ],
+    [
+      "face",
+      0.0166
+    ],
+    [
+      "pos_count",
+      0.0161
+    ],
+    [
+      "word_count",
+      0.015
+    ],
+    [
+      "tasks",
+      0.0129
+    ],
+    [
+      "session",
+      0.0128
+    ],
+    [
+      "softened",
+      0.01
+    ],
+    [
+      "duration",
+      0.0095
+    ]
+  ],
+  "cv_accuracy": 0.89,
+  "intensity_mae": 0.811,
+  "classes": [
+    "calm",
+    "focused",
+    "mixed",
+    "neutral",
+    "overwhelmed",
+    "restless"
+  ]
+}
