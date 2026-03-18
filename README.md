@@ -244,7 +244,7 @@ See **[EDGE_PLAN.md](EDGE_PLAN.md)** for full mobile deployment plan.
 ## 👤 Author
 
 **Shreya Agarwal**  
-Machine Learning Internship — Team ArvyaX · RevoltronX
+
 
 ---
 
